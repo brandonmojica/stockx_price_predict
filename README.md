@@ -1,8 +1,3 @@
-# stockx_price_predict
-
-
-This repo consist of a linear regression model that attempts to predict resell price if a shoe. 
-
 # StockX - Predict Resell Price of a Shoe
 
 Would you spend $3,000 on a shoe? Some people do! That price is not the retail price, but the resell after market value. I got this idea after speaking with a friend who does this for a liivng. He buys (he has a friend that works a shoe store and holds a pair for him, so he has the inside scoop. Most people don't!) very limited released shoes or a shoes he thinks will resell very high. He reads a bunch or shoe blogs and articles that are up with the current trends to get insights on which shoe to try and get. Below are a few of those blogs if you are interested. 
@@ -19,15 +14,14 @@ Note: This work originated as a Capstone project for the Data Science Immersive 
 
 # Background
 
-I've seen a few other models developed for this, but everyything has been very broad, and the data has been very limited. The original thought was trying to predict the price for any shoe that was 
+I've seen a few other models developed for this, but everyything has been very broad, and the data has been very limited. The original thought was trying to predict the price for any shoe on the site, but due to my data collection restraints I narrowed it down to just two types of brands. Addias and Nike. Within those two brands, there are two sub-brands called "Yeezy" and "Off-White". My dataset contains only those two types of shoes. 
 
+There are so many styles and types that it would be very difficult to try and predict the price for all shoes. The biggest benefit of a model that predicts properly would be useful for "Sneaker Heads" to see what they could expect on their investment on these high valued items. 
 
-
-The biggest economic impact of accurate predictions is contributing to gambling and betting lines.  As suggested by Kovalchik (2016), it also could be useful for sports analysts and coaches. Both may gain insight into what makes one player more probable to win than another, where coaches may be able to use that information to benefit a player.
 
 # Procedures followed
 
-The project uses data gathered by Jeff Sackmann at [Tennis Abstract](http://www.tennisabstract.com/). It was available on GitHub in the [tennis_atp repo](https://github.com/JeffSackmann/tennis_atp).  Each row of data is for a particular match and each column contains the factors (features) of the match.  For data from 1992 through 2017, a larger set of features are available. (Data is also available for 2018, but this data was not used because the tournaments for that year were not complete at the time of the project.)
+This project uses data gathered from the stockx website [here](https://stockx.com/news/the-2019-data-contest/). Each row of data is a shoe that was sold from the years 2017 to early 2019 and the features that are the type of shoe, size, color, the state which it was sold to, and the sale price. 
 
 The features are of three types:
 * Tournament features: Tournament ID, Date, Playing Surface, etc.
@@ -35,7 +29,6 @@ The features are of three types:
 * Match features: Aces, Double Faults, etc.
 
 An overview of the process is shown in Figure 1.  The data was prepared using the standard Python stack (numpy, pandas, etc.) to remove or fill missing values and to select features. Then, the match data is generated from previous player matches. (More detail on this appear later in this section.) Finally, Logistic Regression, Random Forest, and Gradient Boosted Trees all resulted in 60% accuracy.
-
 
 <p align="center"> 
 <img src="images/workflow_tools_fig.png" height=80%, width=80%, alt="Workflow and Tech stack"><br> <b>Figure 1:</b> Machine Learning Workflow and Tools
