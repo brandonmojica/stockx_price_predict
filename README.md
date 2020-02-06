@@ -23,10 +23,23 @@ There are so many styles and types that it would be very difficult to try and pr
 
 This project uses data gathered from the stockx website [here](https://stockx.com/news/the-2019-data-contest/). Each row of data is a shoe that was sold from the years 2017 to early 2019 and the features that are the type of shoe, size, color, the state which it was sold to, and the sale price. 
 
-The features are of three types:
-* Tournament features: Tournament ID, Date, Playing Surface, etc.
-* Players features: Height, Age, Handedness
-* Match features: Aces, Double Faults, etc.
+The features are consist of: 
+* Order Date
+* Brand
+* Shoe
+* Sale Price 
+* Retail Price
+* Release Date 
+* Shoe Size
+* Buyer Region
+* Order year
+* Order month 
+* Order day
+* Release year
+* Release month
+* Release day
+* average_sale_price
+* shoe_premium
 
 An overview of the process is shown in Figure 1.  The data was prepared using the standard Python stack (numpy, pandas, etc.) to remove or fill missing values and to select features. Then, the match data is generated from previous player matches. (More detail on this appear later in this section.) Finally, Logistic Regression, Random Forest, and Gradient Boosted Trees all resulted in 60% accuracy.
 
