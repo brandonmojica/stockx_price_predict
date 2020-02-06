@@ -41,30 +41,29 @@ The features are consist of:
 * average_sale_price
 * shoe_premium
 
-An overview of the process is shown in Figure 1.  The data was prepared using the standard Python stack (numpy, pandas, etc.) to remove or fill missing values and to select features. Then, the match data is generated from previous player matches. (More detail on this appear later in this section.) Finally, Logistic Regression, Random Forest, and Gradient Boosted Trees all resulted in 60% accuracy.
+
+An overview of the process is in the image below. The data was prepared using the standard Python stack (numpy, pandas, etc.) to remove or fill missing values and to select features. Finally, Linear Regression, Lasso Regression ,and Random Forest Regession resulted in a MSE from 83.777, 83.690, 84.697.
 
 <p align="center"> 
 <img src="images/workflow_tools_fig.png" height=80%, width=80%, alt="Workflow and Tech stack"><br> <b>Figure 1:</b> Machine Learning Workflow and Tools
 </p>
+ 
+## Data Cleaning: 
+My data cleaning process wasn't too bad. There were a few columns that had characters mixed with numbers so I had to deal with that small issues. There were also some data types that were object that needed to be swichted to datetime and then split on that date to get month ordered, day ordered, and year ordered. Below shows that change.
 
-A flavor of the data cleaning required is as follows: 
-For missing player rank (2.4% of cases), the ranking was filled first with their average ranking over the data used and second with the worst (largest) ranking observed. The second is done because if a player ranking is not available due to the ranking being too poor (large number) to be recorded.
+******** PUT PICTURES HERE ***************
 
-Two challenges in this gathered data are as follows:
-1. Each row contains both the winner and the loser, and so does not associate well with a single target.
-2. Rows contain _match features_ about the match itself, which **would not** be available for the sake of predicting the match.
-
-For the first issue, data needs separated into data for the winner and data for the loser.  For the second issue, the _match features_ are considered important to making a more accurate prediction. Thus, a method to populate these features is required.
 
 ### Feature engineering
 
-_Feature engineering_ refers to the process of modifying the feature space (adding, removing, or transforming features) for the purpose of making them more predictive.  Feature engineering for the two steps mentioned above were accomplished using the following procedures.
+After trying to run a regression on the entire dataset my model was not very intiative. So after thinking it over, I wanted to simplify my model. My entire dataset consisted of about 50 different unique shoes. Below are the different types of shoes that are for each brand. Even though off-white had more different styles, the yeezy brand and far more obervations. After filtering by brand and then shoe count, I took the shoe that had the highest count of every style and tried to predict that one shoe's resell price. 
 
-The dataset was first partitioned into two sets, one for the winner and one for the loser. The feature names (i.e. column labels) were then matched when appropriate (e.g. "Winner Aces" and "Loser Aces" to "Aces").  A new column is added, with label "1" ascribed to the winner data and "0" ascribed to the loser data.  The next step is concatenating the two resultant datasets to make one large dataframe. This accomplishes the first step needed: each row is associated with a unique target. This step has the effect of doubling the number of rows ('observations') while condensing the number of features.
+Besides deciding to reduce my dataset to one shoe, I also calculated the mark up and the days the shoe was bought from the relase date. My new dataframe can be seen below. 
 
-The second step involves generating the statistics of interest for a particular match.  Since one only has access to _past_ data, some form of data from _previous matches_ is needed. In the project, data for any match were generated for the **players in the match** from the past _one year_ of matches that the player played. This was done using rolling average in pandas, with the _.rolling()_ DataFrame method.  The process is illustrated in Figures 2-4.
 
-Figure 2 shows an example of how the data is prepared for analysis. For a particular player, the data from a certain time period are gathered together. Note that in Figure 2, the data are in _reverse_ chronological order.  Elements of the tournament features, player features, and match features are all used in this process, although Figure 2 illustrates the match features specifically. 
+********* PUT IMAGE ************
+
+
 
 <p align="center"> 
 <img src="images/data_to_feature_eng.png" height=80%, width=80%, alt="Player Groups" align="middle"><br> <b>Figure 2:</b> Data Grouped by Player
