@@ -45,7 +45,7 @@ The features are consist of:
 An overview of the process is in the image below. The data was prepared using the standard Python stack (numpy, pandas, etc.) to remove or fill missing values and to select features. Finally, Linear Regression, Lasso Regression ,and Random Forest Regession resulted in a MSE from 83.777, 83.690, 84.697.
 
 <p align="center"> 
-<img src="images/workflow_tools_fig.png" height=80%, width=80%, alt="Workflow and Tech stack"><br> <b>Figure 1:</b> Machine Learning Workflow and Tools
+<img src="img/tech_stack.png" height=80%, width=80%, alt="Workflow and Tech stack"><br> <b>Figure 1:</b> Workflow and Tools
 </p>
  
 ## Data Cleaning: 
