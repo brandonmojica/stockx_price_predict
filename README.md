@@ -47,9 +47,7 @@ The features are consist of:
 </p>
  
 ## Data Cleaning: 
-My data cleaning process wasn't too bad. There were a few columns that had characters mixed with numbers so I had to deal with that small issues. There were also some data types that were object that needed to be swichted to datetime and then split on that date to get month ordered, day ordered, and year ordered. Below shows that change.
-
-******** PUT PICTURES HERE ***************
+My data cleaning process wasn't too bad. There were a few columns that had characters mixed with numbers so I had to deal with that small issues. There were also some data types that were object that needed to be swichted to datetime and then split on that date to get month ordered, day ordered, and year ordered. 
 
 
 ### Feature engineering
@@ -59,7 +57,6 @@ After trying to run a regression on the entire dataset my model was not very int
 Besides deciding to reduce my dataset to one shoe, I also calculated the mark up and the days the shoe was bought from the release date. My new dataframe can be seen below. 
 
 
-********* PUT IMAGE ************
 
 
 ### Models Used
